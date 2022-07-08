@@ -11,10 +11,45 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+ul {
+  list-style-type: none;
+}
 
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+img {
+  height: 20px;
+}
+.body-name {
+  display: flex;
+
+  align-items: center;
+}
+.card-name {
+  margin-left: 10px;
+}
+.body-info {
+  display: flex;
+  align-items: center;
+}
+.info {
+  margin-left: 10px;
+}
+.list {
+  display: flex;
+  align-items: center;
+}
+.card-text {
+  margin-left: 10px;
+}
+
+.body-all {
+  padding: 15px;
+  width: 350px;
+  background-color: antiquewhite;
 }

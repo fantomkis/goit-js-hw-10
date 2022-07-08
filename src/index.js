@@ -7,7 +7,7 @@ import list from './parsal/list-cantri.hbs';
 
 const inputEl = document.querySelector('#search-box');
 const contriListEl = document.querySelector('.country-list');
-const contriInfoEl = document.querySelector('country-info');
+const contriInfoEl = document.querySelector('.country-info');
 const DEBOUNCE_DELAY = 300;
 
 inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
@@ -22,20 +22,20 @@ function onInput(event) {
   }
 
   fetchCountries(event.target.value.trim())
-    .then(countrys => {
+    .then(countries => {
       clin();
-      if (countrys.length > 10) {
+      if (countries.length > 10) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.',
           { timeout: 400 }
         );
         return;
       }
-      if (countrys.length <= 10 && countrys.length >= 2) {
-        contriListEl.innerHTML = conutries.map(list).join('');
+      if (countries.length <= 10 && countries.length >= 2) {
+        contriListEl.innerHTML = countries.map(list).join('');
         return;
       }
-      contriInfoEl.innerHTML = card(countrys[0]);
+      contriInfoEl.innerHTML = card(countries[0]);
       return;
     })
     .catch(error => {
